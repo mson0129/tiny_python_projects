@@ -52,10 +52,10 @@ def main():
     #     print(choose(char), end='')
 
     # Version "list"
-    # print(''.join([choose(char) for char in text]))
+    print(''.join([choose(char) for char in text]))
 
     # Version "map"
-    print(''.join(map(choose, text)))
+    # print(''.join(map(choose, text)))
 
 
 # --------------------------------------------------
@@ -65,11 +65,13 @@ def choose(char: str):
 
 # --------------------------------------------------
 def test_choose():
+    """Test choose"""
+
     state = random.getstate()
     random.seed(1)
     assert choose('a') == 'a'
     assert choose('b') == 'b'
-    assert choose('c') == 'c'
+    assert choose('c') == 'C'
     assert choose('d') == 'd'
     random.setstate(state)
 
