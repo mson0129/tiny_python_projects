@@ -53,7 +53,8 @@ def main():
 
     if len(inputs) < len(matches):
         for i in range(len(inputs), len(matches)):
-            value = input(f'Give me an {matches[i][1]}: ')
+            article = 'an' if matches[i][1][:1] in 'aeiou' else 'a'
+            value = input(f'Give me {article} {matches[i][1]}: ')
             inputs.append(value)
     
     for value in inputs:
